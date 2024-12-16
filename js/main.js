@@ -24,12 +24,41 @@ function cargarMenu() {
     <div id="juego_menu" class="juego-menu">
         <div class="botones-juego-menu">
             <button id="boton_volver" onclick="salirAlMenu();">MENU</button>
-            <button id="boton_guardar" onclick="">GUARDAR</button>
+            <button id="boton_guardar" onclick="mostrarPantallaGuardado();">GUARDAR</button>
         </div>
         <div id="puntuacion" class="puntuacion">000000</div>
         <div id="tiempo" class="tiempo">00:00</div>
     </div>
-    <div id="tablero" class="tablero"></div>
+    <div id="tablero" class="tablero">
+        <div id="pantallaSeleccionarModo" class="pantallaSeleccionarModo">
+            <div class="opcionModoDeJuego">
+                <form>
+                    <label>
+                        <input type="radio" name="radio" checked/>
+                        <span>1 VS 1</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="radio"/>
+                        <span>1 VS IA</span>
+                    </label>
+                </form>
+            </div>
+            <div class="imagen-container">
+                <img onclick="empezarPartida();" src="./assets/imagenes/jugar.png" height="128">
+                <label class="label-jugar">JUGAR!</label>
+            </div>
+        </div>
+        <div id="pantallaGuardado" class="pantalla-guardado" style="display: none;">
+            <span><img onclick="salirPantallaGuardado();" style="cursor: pointer;" src="./assets/imagenes/equis.png"></span>
+            <div class="form">
+                <div class="input-container ic1">
+                    <input id="firstname" class="input" type="text" placeholder="Nombre de usuario" />
+
+                </div>
+                <button type="text" class="submit">REGISTRAR DATOS</button>
+            </div>
+        </div>
+    </div>
     <div id="display-fichas" class="juego-fichas"></div>`;
 
     //Contenido dentro del menu de opciones

@@ -232,3 +232,177 @@ hr {
 .creditos h3:not(:last-of-type) {
     margin-bottom: 20px;
 }
+
+/* Pantalla seleccionar modo de juego */
+
+.pantallaSeleccionarModo {
+    height: 400px;
+    width: 600px;
+    background-color: #333;
+    border: 3px solid lightcyan;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.opcionesModoDeJuego {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    justify-content: center;
+}
+
+.imagen-container {
+    position: relative;
+    display: inline-block;
+    transition: filter 0.3s ease;
+}
+
+.label-jugar {
+    position: absolute;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 24px;
+    opacity: 0;
+    pointer-events: none; /* Evita que el texto interfiera con el click en la imagen */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.imagen-container:hover .label-jugar {
+    opacity: 1;
+    transform: translate(-50%, 250%); /* Se mueve hacia abajo o hacia un lado */
+}
+
+img {
+    cursor: pointer;
+}
+
+/* Pantalla de guardado */
+.pantalla-guardado {
+    height: 220px;
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    border: 3px solid lightcyan;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.form {
+    padding: 20px;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .input {
+    background-color: rgb(165, 255, 255);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+
+  .submit {
+    background-color: #0aa824;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 20px;
+    outline: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  
+  form {
+    display: flex;
+    gap: 20px;
+  }
+  
+  label {
+    display: flex;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.375em;
+  }
+
+  label input {
+    position: absolute;
+    left: -9999px;
+  }
+
+  label input:checked + span {
+    background-color: #d6d6e5;
+    scale: 1.2;
+  }
+
+  label input:checked + span:before {
+    box-shadow: inset 0 0 0 0.4375em #00005c;
+  }
+
+  label span {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    transition: 0.25s ease;
+  }
+
+  label span:hover {
+    background-color: #d6d6e5;
+  }
+
+  label span:before {
+    display: flex;
+    flex-shrink: 0;
+    content: "";
+    background-color: #fff;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    margin-right: 0.375em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.125em #00005c;
+  }
+  
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }

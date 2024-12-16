@@ -105,17 +105,16 @@ function salirAlMenu() {
     $('#juego').hide();
 }
 
+//Funcion para mostrar la pantalla de guardado
+function mostrarPantallaGuardado() {
+    $('#pantallaGuardado').show();
+}
+
+function salirPantallaGuardado() {
+    $('#pantallaGuardado').hide();
+}
+
 //Funcion guardar puntuacion, el nombre del usuario, el tiempo transcurrido en la partida y que jugador ganó.
-function guardarResultados(puntuacion, usuario, tiempoTranscurrido, jugGanador) {
-
-}
-
-//Funcion puntuaciones de MAYOR a MENOR
-function cargarDEMAYORAMENOR() {
-
-}
-
-//Funcion puntuaciones de MENOR a MAYOR
-function cargarDEMENORAMAYOR() {
-
+function guardarResultado() {
+    
 }
