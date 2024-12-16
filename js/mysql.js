@@ -41,6 +41,7 @@ window.creditos = {
 
 //FIN DEFINIR BOTONES
 
+//Ejemplo para los puntajes, esto tiene que estar en Base de Datos
 window.puntos = {
     jugadores: [
         {
