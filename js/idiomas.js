@@ -45,7 +45,7 @@ window.idiomas = {
       opciones: "OPCIONS",
       puntuaciones: "PUNTAXE",
       creditos: "CREDITOS",
-      idioma: "IDIOMA",
+      idioma: "LINGUA",
       estilo: "ESTILO",
       mayormenor: "MAIOR A MENOR",
       menormayor: "MENOR A MAIOR",
@@ -77,9 +77,9 @@ $(document).ready(function(){
         //Actualizar el texto de determinadas etiquetas
         $('#boton_guardar').html(idioma.guardar);
         $('#idioma').html(idioma.idioma);
-        $('input[value="espanol"]').html(idioma.opcionespanol);
-        $('input[value="ingles"]').html(idioma.opcioningles);
-        $('input[value="gallego"]').html(idioma.opciongallego);
+        $('label input[name="idioma"][value="espanol"]').next('span').text(idioma.opcionespanol);
+        $('label input[name="idioma"][value="ingles"]').next('span').text(idioma.opcioningles);
+        $('label input[name="idioma"][value="gallego"]').next('span').text(idioma.opciongallego);
         $('#estilo').html(idioma.estilo);
         $('#mayorAMenor').html(idioma.mayormenor);
         $('#menorAMayor').html(idioma.menormayor);

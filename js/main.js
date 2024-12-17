@@ -32,12 +32,12 @@ function cargarMenu() {
     <div id="tablero" class="tablero">
         <div id="pantallaSeleccionarModo" class="pantallaSeleccionarModo">
             <div class="opcionModoDeJuego">
-                <form>
-                    <label>
+                <form class="formModoDeJuego">
+                    <label class="labelModoDeJuego">
                         <input type="radio" name="radio" checked/>
                         <span>1 VS 1</span>
                     </label>
-                    <label>
+                    <label class="labelModoDeJuego">
                         <input type="radio" name="radio"/>
                         <span>1 VS IA</span>
                     </label>
@@ -73,17 +73,17 @@ function cargarMenu() {
     <p id="idioma" >IDIOMA</p>
         <label>
             <input type="radio" name="idioma" value="espanol" checked>
-            ESPAÑOL
+            <span>ESPAÑOL</span>
         </label><br>
 
         <label>
             <input type="radio" name="idioma" value="ingles">
-            INGLÉS
+            <span>INGLÉS</span>
         </label><br>
 
         <label>
             <input type="radio" name="idioma" value="gallego">
-            GALLEGO
+            <span>GALLEGO</span>
         </label><br>`;
     
     //Contenido de la opcion de estilo en el menu de opciones
