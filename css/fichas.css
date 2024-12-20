@@ -1,0 +1,49 @@
+/* Estilo general para la ficha de dominó */
+.ficha {
+    width: 45px; /* Ancho de la ficha */
+    height: 90px; /* Alto de la ficha */
+    background-color: white; /* Color de fondo blanco */
+    border: 2px solid #000; /* Borde negro */
+    display: flex;
+    flex-direction: column; /* División vertical */
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px; /* Bordes redondeados */
+    position: relative;
+}
+
+/* Línea que divide la ficha */
+.divisor {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+/* Contenedor para los puntos (6 puntos en un lado) */
+.lado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 45%;
+}
+
+/* Puntos dentro de la ficha */
+.punto {
+    width: 6px;
+    height: 6px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+/* Estilo para el lado con 3 puntos */
+.lado-1, .lado-2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.lado-1 .punto, .lado-2 .punto {
+    margin: 3px;
+}

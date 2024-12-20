@@ -56,6 +56,15 @@ function cambiarEstilo(elemento) {
 
 //Funcion para el boton PUNTUACIONES
 function cargarPuntuaciones() {
+    let textoJugadores = '';
+
+    //Jugadores
+    for (let i = 0; i < window.puntos.jugadores.length; i++) {
+        textoJugadores += `<p>${window.puntos.jugadores[i].usuario}: ${window.puntos.jugadores[i].puntuacion}</p>`;
+    }
+
+    $('#puntuacionesMayorMenor').html(textoJugadores);
+    $('#puntuacionesMenorMayor').html(textoJugadores);
 
     //Escondemos el menu, y mostramos el menu de opciones (esto se hace para que al moverse entre el menu, al no sobreescribir el div de las opciones, estas quedan en display none, por lo que si hacemos algun cambio en las opciones, estas se mantendran.)
     $('#div_menu').hide();
@@ -103,6 +112,12 @@ function salirAlMenu() {
 
     //Escondemos el juego
     $('#juego').hide();
+
+    //Volver a colocar las fichas por si se movieron
+    colocarTodasLasFichas();
+
+    //Mostramos la opcion del modo de juego
+    $('#pantallaSeleccionarModo').show();
 }
 
 //Funcion para mostrar la pantalla de guardado
@@ -116,5 +131,21 @@ function salirPantallaGuardado() {
 
 //Funcion guardar puntuacion, el nombre del usuario, el tiempo transcurrido en la partida y que jugador ganó.
 function guardarResultado() {
-    
+    // Obtener el valor del input usando jQuery
+    var nombreUsuario = $('#nombreUsuario').val();
+    let puntos = $('#puntosJugador').text();
+
+    if (nombreUsuario == '') {
+        alert("Escriba un nombre de usuario");
+    } else {
+        // Agregar el jugador a la lista
+        window.puntos.jugadores.push({
+            usuario: nombreUsuario,
+            puntuacion: puntos
+        });
+
+        $('#nombreUsuario').val('');
+
+        salirPantallaGuardado();
+    }
 }

@@ -17,7 +17,13 @@ window.idiomas = {
       guardar: "GUARDAR",
       opcionespanol: "ESPAÑOL",
       opcioningles: "INGLÉS",
-      opciongallego: "GALLEGO"
+      opciongallego: "GALLEGO",
+      textojugar: "JUGAR!",
+      textoplaceholder: "NOMBRE DEL USUARIO",
+      textoregistrardatos: "REGISTRAR DATOS",
+      textocomojugar: "¿COMO JUGAR?",
+      textoarrastrarfichas: "-Arrastrar las fichas para moverlas (solamente se podran arrastrar por el tablero).",
+      textorotarfichas: "-Click sobre la ficha para poder rotarla."
     },
   
     ingles: {
@@ -37,7 +43,13 @@ window.idiomas = {
       guardar: "SAVE",
       opcionespanol: "SPANISH",
       opcioningles: "ENGLISH",
-      opciongallego: "GALICIAN"
+      opciongallego: "GALICIAN",
+      textojugar: "PLAY!",
+      textoplaceholder: "USERNAME",
+      textoregistrardatos: "SAVE DATA",
+      textocomojugar: "¿HOW TO PLAY?",
+      textoarrastrarfichas: "-Drag the tiles to move them (they can only be dragged around the board).",
+      textorotarfichas: "-Click on the tile to rotate it."
     },
   
     gallego: {
@@ -57,7 +69,13 @@ window.idiomas = {
       guardar: "GARDAR",
       opcionespanol: "ESPAÑOL",
       opcioningles: "INGLÉS",
-      opciongallego: "GALEGO"
+      opciongallego: "GALEGO",
+      textojugar: "XOGAR!",
+      textoplaceholder: "NOME DO USUARIO",
+      textoregistrardatos: "REXISTRAR DATOS",
+      textocomojugar: "¿COMO XOGAR?",
+      textoarrastrarfichas: "-Arrastrar as fichas para movelas (soamente poderanse arrastrar polo taboleiro).",
+      textorotarfichas: "-Click na ficha para poder rotala."
     }
   }
 
@@ -76,6 +94,12 @@ $(document).ready(function(){
 
         //Actualizar el texto de determinadas etiquetas
         $('#boton_guardar').html(idioma.guardar);
+        $('#textoJugar').html(idioma.textojugar);
+        $('#nombreUsuario').attr('placeholder', idioma.textoplaceholder);
+        $('#botonRegistrarDatos').html(idioma.textoregistrardatos);
+        $('#textoComoJugar').html(idioma.textocomojugar);
+        $('#textoArrastrarFichas').html(idioma.textoarrastrarfichas);
+        $('#textoRotarFichas').html(idioma.textorotarfichas);
         $('#idioma').html(idioma.idioma);
         $('label input[name="idioma"][value="espanol"]').next('span').text(idioma.opcionespanol);
         $('label input[name="idioma"][value="ingles"]').next('span').text(idioma.opcioningles);

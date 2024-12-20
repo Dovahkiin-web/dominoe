@@ -1,0 +1,53 @@
+/* Pantalla de guardado */
+.pantalla-guardado {
+    height: 220px;
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    border: 3px solid lightcyan;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.formGuardar {
+    padding: 20px;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .input {
+    background-color: rgb(165, 255, 255);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+
+  .submit {
+    background-color: #0aa824;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 20px;
+    outline: 0;
+    text-align: center;
+    width: 100%;
+}

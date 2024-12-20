@@ -7,7 +7,7 @@ function cargarMenu() {
     <div class="titulo-container">
         <img src="./assets/imagenes/domino.png" height="200" width="500">
     </div>
-    <div id="menu_container" class="game-container">
+    <div id="menu_container" class="menu-container">
         <h1>MENU</h1>
         <hr>
         <span id="flecha_boton" style="display: none;">
@@ -26,13 +26,17 @@ function cargarMenu() {
             <button id="boton_volver" onclick="salirAlMenu();">MENU</button>
             <button id="boton_guardar" onclick="mostrarPantallaGuardado();">GUARDAR</button>
         </div>
-        <div id="puntuacion" class="puntuacion">000000</div>
+        <div id="puntosJugador" class="puntuacion">000000</div>
         <div id="tiempo" class="tiempo">00:00</div>
     </div>
     <div id="tablero" class="tablero">
+        <div class="celda" id="celda1"></div>
+        <div class="celda" id="celda2"></div>
+        <div class="celda" id="celda3"></div>
+        <div class="celda" id="celda4"></div>
         <div id="pantallaSeleccionarModo" class="pantallaSeleccionarModo">
-            <div class="opcionModoDeJuego">
-                <form class="formModoDeJuego">
+            <div class="div-modoDeJuego-comoJugar">
+                <div class="opcionModoDeJuego">
                     <label class="labelModoDeJuego">
                         <input type="radio" name="radio" checked/>
                         <span>1 VS 1</span>
@@ -41,21 +45,28 @@ function cargarMenu() {
                         <input type="radio" name="radio"/>
                         <span>1 VS IA</span>
                     </label>
-                </form>
+                </div>
+                <div class="div-como-jugar">
+                    <b id="textoComoJugar">¿COMO JUGAR?</b>
+                    <ul>
+                        <li id="textoArrastrarFichas">-Arrastrar las fichas para moverlas (solamente se podran arrastrar por el tablero).</li>
+                        <li id="textoRotarFichas">-Click sobre la ficha para poder rotarla.</li>
+                    </ul>
+                </div>
             </div>
+
             <div class="imagen-container">
-                <img onclick="empezarPartida();" src="./assets/imagenes/jugar.png" height="128">
-                <label class="label-jugar">JUGAR!</label>
+                <img onclick="cargarModo();" src="./assets/imagenes/jugar.png" height="128">
+                <label id="textoJugar" class="label-jugar">JUGAR!</label>
             </div>
         </div>
         <div id="pantallaGuardado" class="pantalla-guardado" style="display: none;">
             <span><img onclick="salirPantallaGuardado();" style="cursor: pointer;" src="./assets/imagenes/equis.png"></span>
-            <div class="form">
+            <div class="formGuardar">
                 <div class="input-container ic1">
-                    <input id="firstname" class="input" type="text" placeholder="Nombre de usuario" />
-
+                    <input id="nombreUsuario" class="input" type="text" placeholder="Nombre de usuario" />
                 </div>
-                <button type="text" class="submit">REGISTRAR DATOS</button>
+                <button id="botonRegistrarDatos" onclick="guardarResultado();" type="text" class="submit">REGISTRAR DATOS</button>
             </div>
         </div>
     </div>
@@ -108,13 +119,6 @@ function cargarMenu() {
         </div>
     </div>`;
 
-    let textoJugadores = '';
-
-    //Jugadores
-    for (let i = 0; i < window.puntos.jugadores.length; i++) {
-        textoJugadores += `<p>${window.puntos.jugadores[i].usuario}: ${window.puntos.jugadores[i].puntuacion}</p>`;
-    }
-
     //Contenido de la opcion de creditos
     let textoCreditos = `<div class="creditos">
         <h3 id="creditosNombre" >NOMBRE: ${window.creditos.nombre}</h3>
@@ -140,8 +144,6 @@ function cargarMenu() {
 
     //Contenido de las puntuaciones (Esto es una prueba de como se veria, hay que almacenar esto en Base de Datos y llamar con PHP)
     $('#div_puntuaciones').html(textoPuntuaciones);
-    $('#puntuacionesMayorMenor').html(textoJugadores);
-    $('#puntuacionesMenorMayor').html(textoJugadores);
 
     //Contenido de los creditos
     $('#div_creditos').html(textoCreditos);
@@ -149,4 +151,7 @@ function cargarMenu() {
 
     // Generar los botones del menú en español por defecto
     generarBotones(window.idiomas.espanol);
+    
+    //Colocar las fichas del modo de juego
+    colocarTodasLasFichas();
 }

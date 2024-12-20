@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../assets/imagenes/background-mesa.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.titulo-container {
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.titulo-container img {
+    border: 5px solid black;
+    border-radius: 20px;
+}
+
+.titulo {
+    font-family: "Righteous", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 75px;
+}
+
+.titulo a {
+    text-decoration: none;
+    color: white;
+}

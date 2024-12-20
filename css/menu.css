@@ -1,0 +1,112 @@
+
+.menu-container {
+    padding: 25px;
+    border: 5px solid black;
+    border-radius: 20px;
+    background-color: rgb(209, 209, 209);
+    min-height: 425px;
+    min-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+hr {
+    margin-bottom: 20px;
+}
+
+/* Div puntuaciones */
+.puntuaciones {
+    display: flex;
+    gap: 100px;
+}
+
+.puntuaciones-div {
+    border: 1px solid black;
+    height: max-content;
+}
+
+.formOpciones {
+    display: grid;
+    gap: 20px;
+}
+
+.formOpciones form {
+    border-left: 2px solid black;
+    padding: 5px;
+}
+
+.formOpciones form p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.estilos {
+    display: flex;
+}
+
+.estilos > div {
+    margin: 0 10px ;
+    width: 75px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+#porDefecto {
+    background-image: url("../assets/imagenes/background-mesa.jpg");
+}
+
+#oscuro {
+    background-image: url("../assets/imagenes/background-mesa2.jpg");
+}
+
+#claro {
+    background-image: url("../assets/imagenes/background-mesa3.jpg");
+}
+
+.activo {
+    border: 2px solid #0aa824;
+}
+
+.controles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controles button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #0aa824;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    border: 3px solid transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    transition: border 0.3s ease-out, background-color 0.3s ease-out ;
+}
+
+.controles button:hover {
+    background-color: rgb(0, 194, 10);
+    border-color: black;
+}
+
+.flecha-menu {
+    cursor: pointer;
+}
+
+.creditos {
+    text-align: left;
+}
+
+.creditos h3:not(:last-of-type) {
+    margin-bottom: 20px;
+}
